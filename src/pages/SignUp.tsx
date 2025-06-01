@@ -1,9 +1,11 @@
+import type { FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const navigate = useNavigate();
 
-  function handleSumbmit() {
+  function handleSumbmit(event: FormEvent) {
+    event.preventDefault();
     navigate("/dashboard");
   }
   return (
@@ -26,7 +28,10 @@ function SignUp() {
             type="text"
             placeholder="Insira sua senha"
           />
-          <button className="p-2 w-full  border-solid border border-gray-400 bg-blue-900 text-white rounded-xl">
+          <button
+            type="submit"
+            className="p-2 w-full  border-solid border border-gray-400 bg-blue-900 text-white rounded-xl"
+          >
             Sign Up
           </button>
           <Link to="/">Já possui um cadastro? Clique aqui!</Link>

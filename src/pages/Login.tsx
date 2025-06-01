@@ -22,7 +22,10 @@ function Login() {
             type="text"
             placeholder="insira sua senha"
           />
-          <button className="p-2 w-full  border-solid border border-gray-400 bg-blue-900 text-white rounded-xl">
+          <button
+            type="submit"
+            className="p-2 w-full  border-solid border border-gray-400 bg-blue-900 text-white rounded-xl"
+          >
             Acessar
           </button>
           <Link to="/sign-up">Não possui um cadastro? Clique aqui!</Link>
