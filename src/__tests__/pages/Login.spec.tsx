@@ -11,6 +11,12 @@ describe("Login", () => {
     Link: vi.fn().mockImplementation((props) => props.children),
   }));
 
+  test("should have button function", async () => {
+    render(<Login />);
+    const button = await screen.findByRole("button");
+    fireEvent.click(button);
+    expect(navigateMock).toHaveBeenCalledTimes(1);
+  });
   test("should title Login", async () => {
     render(<Login />);
     const title = await screen.getByRole("heading", { name: "Login" });
@@ -37,14 +43,6 @@ describe("Login", () => {
     const input = await screen.findByPlaceholderText("insira sua senha");
     expect(input).toBeInTheDocument();
   });
-
-  test("should have button function", async () => {
-    render(<Login />);
-    const button = await screen.findByRole("button");
-    fireEvent.click(button);
-    expect(navigateMock).toHaveBeenCalledTimes(1);
-  });
-
   test("Should navigate for page Sign Up", async () => {
     render(<Login />);
     const link = await screen.getByText("Não possui um cadastro? Clique aqui!");
