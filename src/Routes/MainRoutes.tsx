@@ -3,6 +3,7 @@ import CardPost from "../components/CardPost";
 import DashBoard from "../pages/DashBoard";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import { ViewPDF } from "../pages/ViewPDF";
 import { fetchPostDetail, fetchPostList } from "../services/PostService";
 
 function MainRoutes() {
@@ -14,6 +15,7 @@ function MainRoutes() {
         path="/dashboard"
         element={<DashBoard fetcPostList={fetchPostList} />}
       ></Route>
+      <Route path="/viewer" element={<ViewPDF />}></Route>
       <Route
         path="/postdetail/:id"
         element={<CardPost fetcPostDetail={fetchPostDetail} />}
